@@ -14,5 +14,5 @@ s.platform     = :ios, "9.0"
 s.source       = { :git => "https://github.com/RiversMaJianCheng/JCCrashTest.git", :tag => "#{s.version}" }
 s.source_files  = "JCCrashTest", "JCCrashTest/**/*.{h,m}"
 s.requires_arc = true
-
+s.framework      = "UIKit"
 end
