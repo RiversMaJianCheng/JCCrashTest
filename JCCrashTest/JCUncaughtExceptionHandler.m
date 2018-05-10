@@ -8,7 +8,6 @@
 
 #import "JCUncaughtExceptionHandler.h"
 #import "JCCrashFile.h"
-#import "AppDelegate.h"
 
 @implementation JCUncaughtExceptionHandler
 
@@ -49,18 +48,7 @@ void HandleException(NSException *exception)
 
 void InstallUncaughtExceptionHandler(void)
 {
-    //判断是否发送后台消息
-    NSString *string = [[NSUserDefaults standardUserDefaults] objectForKey:@"JCOCCrash"];
-    if (string) {
-        //上传邮件或者服务器
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSString *urlStr = [NSString stringWithFormat:@"mailto://ma_jcheng@126.com?subject=OCCrash-bug报告&body=感谢您的配合!" "错误详情:%@",string];
-        NSURL *url = [NSURL URLWithString:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        [[UIApplication sharedApplication] openURL:url];
-        //删除数据
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"JCOCCrash"];
-        });
-    }
+ 
     NSSetUncaughtExceptionHandler(&HandleException);
 }
 
