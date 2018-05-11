@@ -52,5 +52,6 @@ JCCrashTest是一个简单的测试crash的小 demo。
     }
 }
 ```
+具体理论请看博客，[戳我呀](http://majiancheng.top/2018/05/03/iOS崩溃日志分析/)
 ## 许可证
 JCDrawSpiderChart 使用MIT许可证，详情见LICENSE文件
